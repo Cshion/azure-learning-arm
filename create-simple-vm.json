@@ -212,7 +212,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"
+            "https://raw.githubusercontent.com/Cshion/azure-learning-arm/main/configure-nginx.sh"
           ]
         },
         "protectedSettings": {
