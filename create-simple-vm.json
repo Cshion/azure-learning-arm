@@ -198,6 +198,30 @@
           "linuxConfiguration": "[if(equals(variables('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]"
         }
       }
+    },
+    {
+      "name": "[concat(parameters('vmName'), '/', 'ConfigureNginx')]",
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "apiVersion": "2018-10-01",
+      "location": "[variables('location')]",
+      "tags": {},
+      "properties": {
+        "publisher": "Microsoft.Azure.Extensions",
+        "type": "customScript",
+        "typeHandlerVersion": "2.0",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+          "fileUris": [
+            "https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"
+          ]
+        },
+        "protectedSettings": {
+          "commandToExecute": "./configure-nginx.sh"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
+      ]
     }
   ],
   "outputs": {
