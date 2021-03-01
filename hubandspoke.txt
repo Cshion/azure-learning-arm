@@ -1,0 +1,3 @@
+az deployment group create \
+    --resource-group learn-6d1fad2c-10b0-49b2-8d6c-c65c4cec8901 \
+    --template-uri https://raw.githubusercontent.com/MicrosoftDocs/mslearn-hub-and-spoke-network-architecture/master/azuredeploy.json
